@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family:'Poppins',sans-serif;
+    
 
 }
 :root
@@ -21,14 +22,16 @@ body
 }
 .navigation
 {   
-    position: relative;
+    position: absolute;
     width: 400px;
     height: 70px;
+    top: 70px;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    
 }
 .navigation ul
 {
@@ -147,6 +150,64 @@ body
 {
     transform: translateX(calc(70px *4));
     opacity: 1;
+}
+.wrapper{
+    position: absolute;
+    display: flex;
+    height: 200px;
+    align-items: left;
+    top:300px;
+    left: 30px
+    
+}
+.wrapper .static-txt{
+    color: #fff;
+    font-size :60px;
+    font-weight: 400;
+}
+.wrapper .dynamic-txts{
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+
+}
+.dynamic-txts li{
+    color: #fc6d6d;
+    list-style: none;
+    font-size: 60px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 8s steps(4) infinite;
+}
+@keyframes slide{
+    100%{
+        top: -360px;
+
+    }
+}
+.dynamic-txts li span{
+    position: relative;
+}
+.dynamic-txts li span::after
+{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--clr);
+    border-left: 2px solid #fc6d6d;
+    animation: typing 2s steps(12) infinite;
+
+}
+@keyframes typing{
+    100%{
+        left: 100%;
+        margin: 0 -35px 0 35px;
+
+    }
 }
 
 
