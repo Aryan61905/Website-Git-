@@ -309,7 +309,7 @@ b:hover span:nth-child(4)
 .menu
 {
     position: absolute;
-    left: 1%;
+    left: 3%;
     width: 400px;
     height: 400px;
     display: flex;
@@ -398,7 +398,7 @@ transition:  1s;
 .menu2
 {
     position: absolute;
-    left: 30%;
+    left: 34.5%;
     width: 400px;
     height: 400px;
     display: flex;
@@ -481,6 +481,95 @@ font-size: 2em;
 transition:  1s;
 }
 .menu2.active .toggle2
+{
+    transform: rotate(720deg);
+}
+.menu3
+{
+    position: absolute;
+    left: 66%;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.menu3 li
+{
+    position: absolute;
+    list-style: none;
+    left: 0;
+    transform-origin: 200px;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform: rotate(0deg) translateX(180px);
+
+}
+.menu3.active li
+{
+    transform: rotate(calc(360deg/ 8 * var(--i)));
+    
+    
+}
+.menu3.active a
+{
+ border-radius: 100%;
+ transition-delay: 0.5s;
+ width: 100px;
+ height: 100px;
+ 
+ 
+}
+.menu3 li a 
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 40px;
+    height: 40px;
+    
+    background: cornflowerblue;
+    border-radius: 50%;
+    transform: rotate(calc(360deg/ -8 * var(--i)));
+    box-shadow: 0 3px 4px rgba(0,0,0,0.35);
+    color:var(--clr);
+    text-decoration: none;
+    
+    
+
+
+    transition: 0.5s;
+
+}
+.menu3 li a:hover
+{
+    
+    color:blanchedalmond;
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3,0 0 80px #2196f3;
+    transition-delay: 0.1s;
+
+}
+.toggle3
+{
+position: absolute;
+width: 60px;
+height: 60px;
+background: coral;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 10000;
+border-radius: 50%;
+cursor: pointer;
+box-shadow: 0 3px 4px rgba(0,0,0,0.35);
+font-size: 2em;
+transition:  1s;
+}
+.menu3.active .toggle3
 {
     transform: rotate(720deg);
 }
