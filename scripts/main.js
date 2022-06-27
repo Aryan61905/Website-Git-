@@ -24,7 +24,7 @@ async function open_terminal(){
     await delay(500);
     createText("Starting Server....");
     await delay(800);
-    createText("Connection Succesful at port .80: Enter Command");
+    createText("Connection Succesful at port:8080 => Enter Command");
     createCode("help","For help");
     createCode("about","To get details About Me");
     createCode("All", "To see all Commands");
@@ -152,7 +152,7 @@ function createCode(code,text){
     const p = document.createElement("p");
     p.setAttribute("class","code");
     p.innerHTML = 
-    `${code} <br/><span class = 'text'> ${text}</span>`;
+    `${code}<br/> <br/><span class = 'text'> ${text}</span>`;
     app.appendChild(p);
 }
 
