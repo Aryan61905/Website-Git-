@@ -6,7 +6,11 @@
 }
 :root
 {
-    --clr: #fff;
+    --clr: rgb(43, 41, 41);
+}
+html
+{
+    scroll-behavior: smooth;
 }
 section
 {
@@ -28,15 +32,16 @@ section
 .one
 {
     background: var(--clr);
+    position: sticky;
 }
 .navigation
 {   
-    position: sticky;
+    position: absolute;
     
     width: 400px;
     height: 70px;
-    bottom: 85vh;
-    left:76vh;
+    top: 40px;
+    
     background:  turquoise;
     display: flex;
     justify-content: center;
@@ -168,19 +173,20 @@ section
     display: flex;
     height: 100px;
     
-    right: 120vh;
-    
-    
+      
     
 }
 .wrapper .static-txt{
-    color: #222327;
-    font-size :60px;
+    color: #d6d7db;
+    font-size : 60px;
     font-weight: 400;
-    margin-top: 1.5%;
+    margin-top: 2%;
+    width: 22vh;
+    
+    
 }
 .wrapper .dynamic-txts{
-    margin-left: 15px;
+    
     height: 85px;
     line-height: 90px;
     overflow: hidden;
@@ -227,24 +233,24 @@ section
 
 .two
 {
-    background: #394891;
+    background: var(--clr);
 }
 .about
 {
     position:sticky;
     width: 400px;
     height: 400px;
-    background: rgba(0,0,0,0.5);
+    background: #070a1c;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 200px;
+    margin-right: 100px;
 }
 .about::before
 {
     content: '';
     position: absolute;
     inset: -10px 140px;
-    background: linear-gradient(315deg,#00ccff,#d400d4);
+    background: linear-gradient(315deg,#00ccff,#e74a51);
     transition: 0.5s;
     animation: animate 4s linear infinite;
 }
@@ -276,7 +282,7 @@ section
 {
     position: absolute;
     inset: 30px;
-    border: 10px solid #394891;
+    border: 10px #162052;
     z-index: 3;
     border-radius: 50%;
     overflow: hidden;
@@ -339,21 +345,44 @@ section
 }
 .about-text
 {
-    
+    background: #ebf5fc;
+    padding: 25px 30px;
+    border-radius: 15px;
+    transition: 1s;
     height: 600px;
-    width:  600px;
+    width:  700px;  
+    color:#333
+}
+.about-text:hover
+{
+    transform: translateY(-50px);
+    box-shadow: 0 100px 40px rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, #e74a51,#4f29cd); 
+    transition: 1s;
     
+}
+.about-text:hover h1
+{
+    color:#d6d7db
+}
+.about-text:hover h5
+{
+    color:#d6d7db
+}
+.about-text:hover p
+{
+    color:#d6d7db
 }
 .about-text h1
 {
-    color: white;
-    font-size: 80px;
+    color: #333;
+    font-size: 70px;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
 .about-text h5
 {
-color: white;
+color: #333;
 font-size: 18px;
 text-transform: capitalize;
 margin-bottom: 25px;
@@ -362,22 +391,22 @@ letter-spacing: 2px;
 .about-text p
 {
 
-color: white;
+color: #333;
 letter-spacing: 1px;
 line-height: 28px;
-font-size: 16px;
+font-size: 14px;
 margin-bottom: 45px;
 }
 
 .three
 {
-    background: turquoise;
+    background: var(--clr);
     position: sticky;
 }
 .card-container
 {
     position: relative;
-    
+   
     display: flex;
     align-items: center;
 }
@@ -393,7 +422,9 @@ section .card .image
     width: 140px;
     border-radius: 50%;
     padding: 3px;
-    background: #394891;
+    background: #d6d7db;
+    
+
 }
 
 section .card .image img
@@ -407,20 +438,21 @@ section .card .image img
 .card
 {   
     position: relative;
-    background: #fff;
+    background: #ebf5fc;
+    
+    transition: 0.5s ease-in-out;
     border-radius: 20px;
-    margin: 20px 0;
+    margin: 80px 0;
     width: 280px;
 }
-.card::before
-{
-    content: "";
-    position: absolute;
-    height: 40%;
-    width: 100%;
-    background: #394891;
-    border-radius: 20px 20px 0 0;
+
+.card:hover
+{   
+    background:#4f29cd;
+    transform: translateY(-50px);
+    transition: 0.5s ease-in-out;
 }
+
 .card .card-content
 {
     display: flex;
@@ -447,9 +479,10 @@ section .card .image img
     transition: all 0.3s ease;
     cursor: pointer;
 }
-.card .media-icons i:hover
+.card:hover .media-icons i
 {   
     opacity: 1;
+    color: #ebf5fc;
 }
 .card .name-category
 {
@@ -470,6 +503,14 @@ section .card .image img
     font-size: 15px;
     font-weight: 500;
 }
+.card:hover .name-category .name
+{
+    color: #ebf5fc;
+}
+.card:hover .name-category .category
+{
+    color: #ebf5fc;
+}
 .card .button
 {   
     width: 100%;
@@ -479,7 +520,7 @@ section .card .image img
 }
 .card .button button
 {
-    background: #394891;
+    background: #cccccc;
     outline: none;
     border: none;
     color:#fff;
@@ -489,19 +530,20 @@ section .card .image img
     transition: all 0.3s ease;
     cursor:pointer;
 }
-.button button:hover
-{
-    background: #394891;
+.card:hover .button button
+{   
+    background: #ebf5fc; 
+    color: #333;
 }
 
 .four
 {
-    background: steelblue;
+    background: var(--clr);
 }
 .menu2
 {
     position: sticky;
-    right:115vh;
+    right: 62%;
     width: 0px;
     height: 0px;
     display: flex;
@@ -515,12 +557,12 @@ section .card .image img
     position: absolute;
     list-style: none;
     right: 100%;
-    transform-origin: 400px;
+    transform-origin: 380px;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
-    transform: rotate(0deg) translateX(180px);
+    transform: rotate(0deg) translateX(190px);
     opacity: 0;
-    
+    font-weight: 200;
 
 }
 .menu2.active li
@@ -543,7 +585,8 @@ section .card .image img
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-direction: column;
+    font-weight: 200;
     width: 0px;
     height: 0px;
     font-size: 11px;
@@ -553,10 +596,6 @@ section .card .image img
     box-shadow: 0 3px 4px rgba(0,0,0,0.35);
     color:var(--clr);
     text-decoration: none;
-    
-    
-
-
     transition: 0.5s;
 
 }
@@ -565,27 +604,31 @@ section .card .image img
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    
+    font-weight: 200;
     position: absolute;
     z-index: 5;
     box-sizing: border-box;
     border-radius: 4px;
     visibility: hidden;
     opacity:0;
+    
     transition: 0.5s;
 }
 .menu2 li a:hover .hidden
 {   
+    position: absolute;
     text-align:center;
     content: normal;
     background-color:#fc6d6d;
-    box-shadow: 0 0 10px #fc6d6d, 0 0 40px #fc6d6d,0 0 80px #fc6d6d;
+    
+    /*box-shadow: 0 0 10px #fc6d6d, 0 0 40px #fc6d6d,0 0 80px #fc6d6d;*/
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    font-weight: 300;
     visibility: visible;
     opacity: 1;
 }
+
 .menu2 li a:hover
 {
     
@@ -594,11 +637,33 @@ section .card .image img
     transition-delay: 0.1s;
 
 }
+.menu2 li a .text h3
+{
+    color: blanchedalmond;
+    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1;
+    
+}
+.menu2 li a h1
+{   
+    position: relative;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 50px;
+    opacity: 1;
+    
+    z-index: -1;
 
+}
 .toggle2
 {
 position: absolute;
-left: 170px;
+left: 150px;
 width: 60px;
 height: 60px;
 background: coral;
@@ -619,7 +684,7 @@ transition:  1s;
 
 .five
 {
-    background: teal;
+    background: var(--clr);
 }
 .contact{
     width: 100%;

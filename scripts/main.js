@@ -25,10 +25,13 @@ async function open_terminal(){
     createText("Starting Server....");
     await delay(800);
     createText("Connection Succesful at port:8080 => Enter Command");
-    createCode("help","For help");
-    createCode("about","To get details About Me");
-    createCode("All", "To see all Commands");
-    createCode("clr","To clear the terminal");
+    createCode("all", "List All commands")
+    createCode("about","Get to know me");
+    createCode("fun","A List of Fun Facts");
+    createCode("honors","My honours and Achievements");
+    createCode("courses","The list of Courses I have taken");
+    createCode("skills","Skills I have mastered over the years");
+    createCode("clr","To Clear the terminal");
 
     await delay(500);
     new_line();
@@ -72,40 +75,67 @@ async function getInputValue()
     
     if(value === "all"){
         trueValue(value);
-        createCode("help","For help");
-        createCode("about","To get details about me");
-        createCode("contact","To Contact me");
-        createCode("call","To Call me");
-        createCode("website","To redirect to my webpage");
+        createCode("all", "List All commands")
+        createCode("about","Get to know me");
+        createCode("fun","A List of Fun Facts");
+        createCode("honors","My honours and Achievements");
+        createCode("courses","The list of Courses I have taken");
+        createCode("skills","Skills I have mastered over the years");
         createCode("clr","To Clear the terminal");
     }
     else if(value === "about"){
         trueValue(value);
         createText("Name: Aryan Roy")
+        createText("School: Pennsylvania State University")
         createText("Major: Computer Science")
         createText("Minor: Mathematics, Engineering Leadership and Development")
         createText("Expected Graduation Date: 2024 Spring")
-        createText("Areas of Interest: Web/App Developement, Software Development, Product Designing")
+        createText("Areas of Interest:  Software Engineering, Machine Learning, Web/App Developement, Product Designing")
     }
-    else if(value === "help"){
+    else if(value === "fun"){
         trueValue(value);
-        createText("Click to see all commands")
+        createText("I made this whole website using HTML, CSS and Javascript. You should be able to hover over elements to see cool animations")
+        createText("I am a huge fan of Fomrula 1 and love the technology they have incorporated into the sport.")
+        createText("I love playing Basketball, Table-Tennis and Soccer in my free time.")
+        createText("I have a Youtube Channel and I love Graphic Designing and Filmmaking")
     }
-    else if(value === "call"){
+    else if(value === "honors"){
         trueValue(value);
-        createText("Click to call <a href='callto8148762059' target='_blank'>8148762059</a>")
+        createText("Airport Cooperative Research Program: Most Innovative Solution")
+        createText("Bro. Bergin Memorial Debate: Winners")
+        createText("St. George's College Mussoorie: Editorial Board")
+        createText("Eberly College of Science Learning Assistant Excellence Scholarship")
+        createText("Leonhard Centre for the Enhancement of Engineering Education and Scholarship")
+
     }
     else if(value === "contact"){
         trueValue(value);
+        createText("Click to call <a href='callto8148762059' target='_blank'>8148762059</a>")
         createText("email:abr5813@psu.edu")
+        
     }
-    else if(value === "website"){
+    else if(value === "courses"){
         trueValue(value);
-        createText("website")
+        createText("CMPSC 131: Introduction to Computer Sciences")
+        createText("CMPSC 132: Data Structures and Algorithms")
+        createText("CMPSC 221: Object Oriented Programming")
+        createText("CMPSC 360: Discrete Mathematics")
+        createText("LDT 100: Learning Design and Technology")
+        createText("IST 110: Information, People and Technology")
+        createText("ENGR 408: Introduction to Engineering Leadership and Development")
+        createText("GD 110: Introduction to Graphic Designing")
+    }
+    else if(value === "skills"){
+        trueValue(value);
+        createText("Programming Languages: C, Java, Python")
+        createText("Web Designing: HTML, CSS, JavaScript")
+        createText("Adobe Suits: Photoshop, Lightroom, After Effects, Indesign")
+        createText("Graphic Designing: Figma, Unity, Spline")
     }
     else if(value === "clr"){
         document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
-        document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+        document.querySelectorAll("t_section").forEach(e => e.parentNode.removeChild(e));
+        createCode("all", "List All commands")
     }
     else{
         falseValue(value);
@@ -114,7 +144,7 @@ async function getInputValue()
 
 }
 function trueValue(value){
-    const div = document.createElement("section");
+    const div = document.createElement("t_section");
     div.setAttribute("class","type2")
     const i = document.createElement("i")
     i.setAttribute("class","fas fa-angle-right icone")
@@ -127,7 +157,7 @@ function trueValue(value){
 }
 
 function falseValue(value){
-    const div = document.createElement("section");
+    const div = document.createElement("t_section");
     div.setAttribute("class","type2")
     const i = document.createElement("i");
     i.setAttribute("class","fas fa-angle-right icone error")
